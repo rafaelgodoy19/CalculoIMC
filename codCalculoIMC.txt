@@ -1,0 +1,307 @@
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro quantEntrev = 0, homemJovem = 0, homemAdulto = 0, homemExpert = 0,
+		mulherJovem = 0, mulherAdulto = 0, mulherExpert = 0
+		real peso, altura, imc, idade,
+		mediaIdadeHomemJovem =0, mediaIdadeHomemAdulto = 0, mediaIdadeHomemExpert = 0, 
+		mediaIdadeMulherJovem = 0, mediaIdadeMulherAdulto = 0, mediaIdadeMulherExpert = 0,
+		mediaPesoHomemJovem = 0, mediaPesoHomemAdulto = 0, mediaPesoHomemExpert = 0,
+		mediaPesoMulherJovem = 0, mediaPesoMulherAdulto = 0, mediaPesoMulherExpert = 0,
+		mediaAlturaHomemJovem = 0, mediaAlturaHomemAdulto = 0, mediaAlturaHomemExpert = 0,
+		mediaAlturaMulherJovem = 0, mediaAlturaMulherAdulto = 0, mediaAlturaMulherExpert = 0,
+		somaIdadeHomemJovem = 0 , somaIdadeHomemAdulto = 0, somaIdadeHomemExpert = 0, 
+		somaIdadeMulherJovem = 0, somaIdadeMulherAdulto = 0, somaIdadeMulherExpert = 0,
+		somaPesoHomemJovem = 0, somaPesoHomemAdulto = 0, somaPesoHomemExpert = 0, 
+		somaPesoMulherJovem = 0, somaPesoMulherAdulto = 0, somaPesoMulherExpert = 0, 
+		somaAlturaHomemJovem = 0, somaAlturaHomemAdulto = 0, somaAlturaHomemExpert = 0,
+		somaAlturaMulherJovem = 0, somaAlturaMulherAdulto = 0, somaAlturaMulherExpert = 0
+		cadeia nome
+		caracter sexo, genero, fim
+
+		escreva("BEM VINDO A ENTREVISTA DE IMC!\n")
+		
+		faca {
+			
+			escreva("\nDigite sua idade: ")
+			leia(idade)
+			
+			se (idade < 18){
+		 	escreva("Desculpe, você não tem idade para participar da entrevista, obrigado pela participação, chame o próximo!")
+			}
+			
+			senao {
+			
+			limpa()
+			escreva("\nDigite seu nome: ")
+			leia(nome)
+
+			faca {
+			
+			escreva("\nDigite (1) se for Homem ou (2) se for Mulher:  ")
+			leia(genero)
+
+			se (genero != '1' e genero != '2'){
+				escreva("Digite 1 ou 2")
+				}
+										
+			} enquanto (genero != '1' e genero != '2')
+			
+			limpa()
+			escreva("\nDigite seu peso: ")
+			leia(peso)
+
+			escreva("\nDigite sua altura em centimetros: ")
+			leia(altura)
+			altura = altura / 100 //transformando centimentros em metro
+
+			imc = (peso / (altura*altura)) //calculo do IMC
+			
+		
+		se (idade >= 18 e idade <=32 e genero == '1'){
+			escreva("\nVocê está dentro do grupo de Homens Jovens!")
+			quantEntrev = quantEntrev + 1 //soma 1 entrevistado
+			somaIdadeHomemJovem = (somaIdadeHomemJovem + idade)
+			somaPesoHomemJovem = (somaPesoHomemJovem + peso)
+			somaAlturaHomemJovem = (somaAlturaHomemJovem + altura)
+			homemJovem = homemJovem + 1 // soma 1 pro grupo de homem jovem
+			
+					
+			escreva("\n\nseu IMC é: ", imc)
+
+				se (imc >= 18.5 e imc <= 24.9){
+				escreva("\nPeso ok\n")
+				}
+				se (imc < 18.5){
+				escreva("\nAbaixo do peso!\n")
+				}
+				se (imc > 24.9){
+		 		escreva("\nSobrepeso!\n") 
+				}
+
+				escreva("\nObrigado pela participação!\n")
+			
+		}
+
+		se (idade >= 18 e idade <=32 e genero == '2'){
+			escreva("\nVocê está dentro do grupo de Mulheres Jovens!")
+			quantEntrev = quantEntrev + 1 //soma 1 entrevistado
+			somaIdadeMulherJovem = (somaIdadeMulherJovem + idade)
+			somaPesoMulherJovem = (somaPesoMulherJovem + peso)
+			somaAlturaMulherJovem = (somaAlturaMulherJovem + altura)
+			mulherJovem = mulherJovem + 1 // soma 1 pro grupo de mulher jovem
+			
+			
+			escreva("\n\nseu IMC é: ", imc)
+
+				se (imc >= 18.5 e imc <= 24.9){
+				escreva("\nPeso ok\n")
+				}
+				se (imc < 18.5){
+				escreva("\nAbaixo do peso!\n")
+				}
+				se (imc > 24.9){
+		 		escreva("\nSobrepeso!\n") 
+				}
+
+				escreva("\nObrigado pela participação!\n")
+			
+		}
+		se (idade >= 33 e idade <= 61 e genero == '1'){
+			escreva("\nVocê está dentro do grupo de Homens Adultos!")
+			quantEntrev = quantEntrev + 1 //soma 1 entrevistado
+			somaIdadeHomemAdulto = (somaIdadeHomemAdulto + idade)
+			somaPesoHomemAdulto = (somaPesoHomemAdulto + peso)
+			somaAlturaHomemAdulto = (somaAlturaHomemAdulto + altura)
+			homemAdulto = homemAdulto + 1
+			
+			escreva("\n\nseu IMC é: ", imc)
+
+				se (imc >= 18.5 e imc <= 24.9){
+				escreva("\nPeso ok\n")
+				}
+				se (imc < 18.5){
+				escreva("\nAbaixo do peso!\n")
+				}
+				se (imc > 24.9){
+		 		escreva("\nSobrepeso!\n") 
+				}
+
+				escreva("\nObrigado pela participação!\n")
+		}
+
+		se (idade >= 33 e idade <= 61 e genero == '2'){
+			escreva("\nVocê está dentro do grupo de Mulheres Adultas!")
+			quantEntrev = quantEntrev + 1 //soma 1 entrevistado
+			somaIdadeMulherAdulto = (somaIdadeMulherAdulto + idade)
+			somaPesoMulherAdulto = (somaPesoMulherAdulto + peso)
+			somaAlturaMulherAdulto = (somaAlturaMulherAdulto + altura)
+			mulherAdulto = mulherAdulto + 1
+			
+			escreva("\n\nseu IMC é: ", imc)
+
+				se (imc >= 18.5 e imc <= 24.9){
+				escreva("\nPeso ok\n")
+				}
+				se (imc < 18.5){
+				escreva("\nAbaixo do peso!\n")
+				}
+				se (imc > 24.9){
+		 		escreva("\nSobrepeso!\n") 
+				}
+
+				escreva("\nObrigado pela participação!\n")
+		}
+		
+		se (idade > 61 e genero == '1'){
+			escreva("\nVocê está dentro do grupo de Homens Experts!\n")
+			quantEntrev = quantEntrev + 1//soma 1 entrevistado
+			somaIdadeHomemExpert = (somaIdadeHomemExpert + idade)
+			somaPesoHomemExpert = (somaPesoHomemExpert + peso)
+			somaAlturaHomemExpert = (somaAlturaHomemExpert + altura)
+			homemExpert = homemExpert +1
+			
+			
+			escreva("\n\nseu IMC é: ", imc)
+
+				se (imc >= 18.5 e imc <= 24.9){
+				escreva("\nPeso ok\n")
+				}
+				se (imc < 18.5){
+				escreva("\nAbaixo do peso!\n")
+				}
+				se (imc > 24.9){
+		 		escreva("\nSobrepeso!\n") 
+				}
+
+				escreva("\nObrigado pela participação!\n")
+
+		}
+
+		se (idade > 61 e genero == '2'){
+			escreva("\nVocê está dentro do grupo de Mulheres Experts!\n")
+			quantEntrev = quantEntrev + 1//soma 1 entrevistado
+			somaIdadeMulherExpert = (somaIdadeMulherExpert + idade)
+			somaPesoMulherExpert = (somaPesoMulherExpert + peso)
+			somaAlturaMulherExpert = (somaAlturaMulherExpert + altura)
+			mulherExpert = mulherExpert +1
+			
+			
+			escreva("\n\nseu IMC é: ", imc)
+
+				se (imc >= 18.5 e imc <= 24.9){
+				escreva("\nPeso ok\n")
+				}
+				se (imc < 18.5){
+				escreva("\nAbaixo do peso!\n")
+				}
+				se (imc > 24.9){
+		 		escreva("\nSobrepeso!\n") 
+				}
+
+				escreva("\nObrigado pela participação!\n")
+
+		}
+
+	}
+
+			escreva("\n\nDeseja finalizar a pesquisa? (S) ou (N): ")
+			leia(fim)
+		
+		}	
+			enquanto ((fim != 'S') e (fim != 's')) 
+			
+			//cálculos das médias
+			mediaIdadeHomemJovem = (somaIdadeHomemJovem / homemJovem)
+			mediaIdadeMulherJovem = (somaIdadeMulherJovem / mulherJovem)
+			mediaIdadeHomemAdulto = (somaIdadeHomemAdulto / homemAdulto)
+			mediaIdadeMulherAdulto = (somaIdadeMulherAdulto / mulherAdulto)
+			mediaIdadeHomemExpert = (somaIdadeHomemExpert / homemExpert)
+			mediaIdadeMulherExpert = (somaIdadeMulherExpert / mulherExpert)
+			mediaPesoHomemJovem = (somaPesoHomemJovem / homemJovem)
+			mediaPesoMulherJovem = (somaPesoMulherJovem / mulherJovem)
+			mediaPesoHomemAdulto = (somaPesoHomemAdulto / homemAdulto)
+			mediaPesoMulherAdulto = (somaPesoMulherAdulto / mulherAdulto)
+			mediaPesoHomemExpert = (somaPesoHomemExpert / homemExpert)
+			mediaPesoMulherExpert = (somaPesoMulherExpert / mulherExpert)
+			mediaAlturaHomemJovem = (somaAlturaHomemJovem / homemJovem)
+			mediaAlturaMulherJovem = (somaAlturaMulherJovem / mulherJovem)
+			mediaAlturaHomemAdulto = (somaAlturaHomemAdulto / homemAdulto)
+			mediaAlturaMulherAdulto = (somaAlturaMulherAdulto / mulherAdulto)
+			mediaAlturaHomemExpert = (somaAlturaHomemExpert / homemExpert)
+			mediaAlturaMulherExpert = (somaAlturaMulherExpert / mulherExpert)
+					
+			//relatório final
+			escreva("\nQuantidade de entrevistados: ", quantEntrev)
+				escreva("\n")
+				escreva("---------------------------------------")
+				escreva("\n")
+
+			se (homemJovem > 0){
+				escreva("Média do Grupo de Homens Jovens!\n")
+				escreva(homemJovem ," Participante(s)\n")
+				escreva("\nIDADE: ",mediaIdadeHomemJovem)
+				escreva("\nPESO: ",mediaPesoHomemJovem , "kg")
+				escreva("\nALTURA: ",mediaAlturaHomemJovem , "m")
+				escreva("\n")
+				escreva("--------------------------------------")
+				escreva("\n")
+			}
+			se (mulherJovem > 0){
+				escreva("Média do Grupo de Mulheres Jovens!\n")
+				escreva(mulherJovem ," Participante(s)\n")
+				escreva("\nIDADE: ",mediaIdadeMulherJovem)
+				escreva("\nPESO: ",mediaPesoMulherJovem , "kg")
+				escreva("\nALTURA: ",mediaAlturaMulherJovem , "m")
+				escreva("\n")
+				escreva("---------------------------------------")
+				escreva("\n")
+			}
+			se(homemAdulto > 0){
+				escreva("Média do Grupo de Homens Adultos!\n")
+				escreva(homemAdulto ," Participante(s)\n")
+				escreva("\nIDADE: ",mediaIdadeHomemAdulto)
+				escreva("\nPESO: ",mediaPesoHomemAdulto , "kg")
+				escreva("\nALTURA: ",mediaAlturaHomemAdulto , "m")
+				escreva("\n")
+				escreva("---------------------------------------")
+				escreva("\n")
+			}
+			
+			se (mulherAdulto > 0){
+				escreva("Média do Grupo de Mulheres Adultas!\n")
+				escreva(mulherAdulto ," Participante(s)\n")
+				escreva("\nIDADE: ",mediaIdadeMulherAdulto)
+				escreva("\nPESO: ",mediaPesoMulherAdulto , "kg")
+				escreva("\nALTURA: ",mediaAlturaMulherAdulto , "m")
+				escreva("\n")
+				escreva("----------------------------------------")
+				escreva("\n")
+			}
+			se(homemExpert > 0){
+				escreva("Média do Grupo de Homens Experts!\n")
+				escreva(homemExpert ," Participante(s)\n")
+				escreva("\nIDADE: ",mediaIdadeHomemExpert)
+				escreva("\nPESO: ",mediaPesoHomemExpert , "kg" )
+				escreva("\nALTURA: ",mediaAlturaHomemExpert , "m")
+				escreva("\n")
+				escreva("---------------------------------------")
+				escreva("\n")
+			}
+			se(mulherExpert > 0){
+				escreva("Média do Grupo de Mulheres Experts!\n")
+				escreva(mulherExpert ," Participante(s)\n")
+				escreva("\nIDADE: ",mediaIdadeMulherExpert)
+				escreva("\nPESO: ",mediaPesoMulherExpert , "kg")
+				escreva("\nALTURA: ",mediaAlturaMulherExpert , "m")
+				escreva("\n")
+				escreva("----------------------------------------")
+				escreva("\n")
+			}
+
+		
+	}
+}
